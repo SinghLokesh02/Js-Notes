@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textContent Vs InnerText</title>
+    <style>
+        p:nth-child(2){
+            display: none;
+        }
+        p:first-child{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="textContent">
+        <div class="box">
+            <h1>Hello</h1>
+            <p>inside box</p>
+        </div>
+        <p>paragraph - 1 Textcontent</p>
+        <p>paragraph - 2 Textcontent</p>
+    </div>
+    <div class="innerText">
+        <p>paragraph - 1 innerText</p>
+        <p>paragraph - 2 innerText</p>
+    </div>
+
+
+    <script>
+        let boxTextContent = document.querySelector(".textContent");
+        console.log(boxTextContent.textContent);
+        let boxInnerText = document.querySelector(".innerText");
+        console.log(boxInnerText.innerText);
+        
+    </script>
+</body>
+</html>

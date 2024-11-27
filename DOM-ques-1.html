@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ques - 1</title>
+  </head>
+  <body>
+    <h2>Old Heading 1</h2>
+    <h2>Another Heading</h2>
+    <h2>Old Heading 2</h2>
+
+    <script>
+        let allH1 = document.querySelectorAll('h2');
+
+        allH1.forEach(element =>{
+            if(element.textContent.includes("Old")){
+                element.textContent = element.textContent.replace("Old","Update");
+            }
+        })
+
+    </script>
+  </body>
+</html>

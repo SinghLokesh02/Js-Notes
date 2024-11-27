@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get and SetAttribute</title>
+    <!-- Attribute
+     img - alt,src,height,width
+     a - href,target
+     input - name,placeholder, required, id, class
+    -->
+</head>
+<body>
+    <img src="https://media.cntraveler.com/photos/57d05114c69c03020b6e99ef/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg" alt="hello" height="200px" width="">
+    <br>
+    <a href="https://youtube.com" target="_blank">Youtube</a>
+    <br>
+    <a href="https://instagram.com" target="suren"> Insta</a>
+
+    <script>
+        
+        // Get
+        let img = document.querySelector('img');
+        console.log(img.getAttribute('height'));
+
+        let link = document.querySelector('a').getAttribute('href')
+        console.log(link);
+        
+        // Set
+        img.setAttribute("height","500px")
+        img.setAttribute("width","500px")
+
+        let link2 = document.querySelector('a[target = "suren"]');
+        // link2.setAttribute('target',"changed")
+        
+
+        // InnerHTML
+        // let body = document.body;
+        // body.innerHTML = "<h1>Hello</h1>"
+        
+
+    </script>
+</body>
+</html>

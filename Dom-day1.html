@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - DAY 1</title>
+</head>
+<body>
+    
+    <div class="box">
+
+    </div>
+
+    <ul>
+        <li>List Item - 1</li>
+    </ul>
+ 
+    <script>
+        
+        let div = document.createElement('div');
+        let data = document.createTextNode("This is Brand New div from Js");
+        div.append(data)
+        let box = document.querySelector('.box');
+        box.append(div);
+
+
+        let ul = document.querySelector("ul");
+        let li = document.createElement("li");
+        li.textContent = "List Item - 2";
+        ul.append(li);
+ 
+
+        // Creating Container
+        let container = document.createElement('div');
+        container.innerHTML = `
+        <div class="box">
+            <p>This is Para 1</p>
+        </div>
+        <div class="box">
+            <p>This is Para 2</p>
+        </div>
+        <div class="box">
+            <p>This is Para 3</p>
+        </div>`
+
+        document.body.append(container);
+
+
+        // Remove Child
+        let liToRemove = document.querySelector('li');
+        ul.removeChild(liToRemove);
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>
