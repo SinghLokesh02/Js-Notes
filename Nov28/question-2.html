@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question - 2</title>
+</head>
+<body>
+    <div data-active="false"></div>
+    <button onclick="toggle()">Toggle</button>
+
+    <script>
+        let div = document.querySelector("div");
+        console.log();
+
+        
+        function toggle(){
+            let data = div.getAttribute("data-active");
+            if(data == "false"){
+                div.setAttribute("data-active",true);
+            }
+            else{
+                div.setAttribute("data-active",false)
+            }
+            div.textContent = div.getAttribute("data-active")
+        }
+        
+    </script>
+</body>
+</html>

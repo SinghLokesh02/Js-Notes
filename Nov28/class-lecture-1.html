@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Class 1</title>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Hello</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa voluptatum
+        quasi exercitationem dolorum maxime deleniti commodi natus dolore
+        numquam! Dolorem.
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="box">
+        <button>Login</button>
+        <button>SignUp</button>
+      </div>
+    </div>
+
+    <h1>Last Heading</h1>
+
+    <script>
+      let root = document.getRootNode();
+      console.log(root);
+
+      let box = document.querySelector(".box");
+      console.log(box.childNodes);
+      console.log(box.childElementCount);
+
+      console.log(box.parentNode);
+      console.log(box.hasChildNodes());
+      console.log(box.lastChild);
+      console.log(box.lastElementChild);
+
+      console.log(box.firstChild);
+      console.log(box.firstElementChild);
+      console.log(box.nextSibling);
+      console.log(box.nextElementSibling);
+      console.log(box.previousSibling);
+
+      let container = document.querySelector(".container")
+      console.log(container.previousElementSibling);
+
+      let btn = document.querySelector("button")
+      console.log(btn.parentElement);
+      
+      
+    </script>
+  </body>
+</html>

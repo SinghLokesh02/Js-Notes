@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class</title>
+    <style>
+      .red {
+        color: red;
+      }
+      .green {
+        color: green;
+      }
+      .size {
+        font-size: 20px;
+      }
+      .center {
+        text-align: center;
+      }
+      .bgc {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1 class="green">Lorem ipsum dolor sit amet.</h1>
+      <p class="red size">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum tempore
+        ullam magnam expedita fuga blanditiis veniam pariatur culpa doloremque
+        voluptates nemo ea ipsam quam dolorum eligendi in, vel a inventore!
+      </p>
+
+      <button onclick="toggle()">click me</button>
+
+      <script>
+        let p = document.querySelector("p");
+        // Get all class of an element
+        console.log(p.classList);
+
+        // Remove a class
+        p.classList.remove("red");
+
+        // add a class
+        p.classList.add("bgc");
+
+        let button = document.querySelector("button");
+
+        function toggle() {
+          p.classList.toggle("red");
+          console.log(p.classList.contains("red"));
+        }
+      </script>
+    </div>
+  </body>
+</html>

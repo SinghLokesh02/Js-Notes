@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>question - 1</title>
+  </head>
+  <body>
+    <img
+      src="https://media.cntraveler.com/photos/57d05114c69c03020b6e99ef/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg"
+      alt="hello"
+      height="200px"
+      width=""
+    />
+
+    <script>
+      let img = document.querySelector("img");
+      let ul = document.createElement("ul");
+      ul.setAttribute("id", "attributeList");
+
+      for (let i = 0; i < img.attributes.length; i++) {
+        let li = document.createElement("li");
+        let obj = img.attributes[i];
+        console.dir(obj);
+
+        li.textContent = `${img.attributes[i].nodeName} : ${img.attributes[i].value}`;
+        ul.append(li);
+      }
+
+      document.body.append(ul);
+    </script>
+  </body>
+</html>

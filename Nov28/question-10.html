@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>question - 10</title>
+  </head>
+  <body>
+    <script>
+      const menuItems = [
+        { label: "Home", link: "/" },
+        { label: "About", link: "/about" },
+        { label: "Contact", link: "/contact" },
+      ];
+
+      let ul = document.createElement("ul");
+      let nav = document.createElement("nav");
+      nav.setAttribute("id", "mainNav");
+
+      menuItems.forEach((element) => {
+        let li = document.createElement("li");
+        li.innerHTML = `<a href=${element.link}>${element.label}</a>`;
+        ul.append(li);
+      });
+
+      nav.append(ul);
+      document.body.append(nav);
+    </script>
+  </body>
+</html>
+
+<!-- 
+
+const menuItems = [
+  { label: "Home", link: "/" },
+  { label: "About", link: "/about" },
+  { label: "Contact", link: "/contact" }
+];
+
+
+-->
