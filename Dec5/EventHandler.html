@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handler</title>
+    <style>
+      .box {
+        background-color: indianred;
+        height: 200px;
+        width: 200px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body onload="alert(`Page Loaded`)">
+    <div
+      class="box"
+      id="box"
+      onclick="changeBgc(),dblClick(),changeBgcGreen()"
+    ></div>
+    <div
+      class="box"
+      id="box"
+      onmouseleave="Move()"
+    ></div>
+    Name : <input type="text" onkeydown="Print()"/>
+
+
+    <form action="" onsubmit="Showdata()">
+        Name : <input type="text">
+        Email : <input type="email" name="" id="">
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+      // Click events
+      function dblClick() {
+        setTimeout(() => {
+          alert("Hello");
+        }, 2000);
+      }
+
+      function changeBgc(e) {
+        let box = document.getElementById("box");
+        setTimeout(() => {
+          box.style.background = "orange";
+        }, 3000);
+      }
+      function changeBgcGreen(e) {
+        let box = document.getElementById("box");
+        box.style.background = "green";
+      }
+
+    //   Move
+    function Move(){
+        console.log("I m Moving...");
+        
+    }
+
+      // Keyboard Events
+      function Print() {
+        let name = document.querySelector('input[type="text"]').value;
+        console.log(`Name: ${name}`);
+      }
+
+
+    //   Submit Event
+      function Showdata(){
+        alert("Form submission")
+      }
+    </script>
+  </body>
+</html>

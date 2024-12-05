@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Listener</title>
+    <style>
+        body{
+            height: 100vh;
+        }
+      .box {
+        background-color: indianred;
+        height: 200px;
+        width: 200px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body class="vh">
+    <div class="box" id="box"></div>
+    <div class="box" id="box2"></div>
+    Name : <input type="text" />
+
+    <form action="">
+      Name : <input type="text" /> Email : <input type="email" name="" id="" />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+    //    Add EventListener to Body
+    window.addEventListener("load",()=>{
+        alert("Content Loaded")
+    })
+
+      //   Event Listener to box-2
+
+      let box2 = document.querySelectorAll(".box")[1];
+      box2.addEventListener("mousemove", () => {
+        console.log("Mouse is Moving");
+      });
+
+      let box1 = document.querySelector(".box");
+      box1.addEventListener("click", () => {
+        if (box1.style.background == "green") box1.style.background = "red";
+        else box1.style.background = "green";
+      });
+      box1.addEventListener("click", () => {
+         setTimeout(() => {
+            box1.textContent = "Hello   "
+         }, 2000);
+      });
+
+    //   Input
+    let input = document.querySelector("input");
+    input.addEventListener("keydown",function(){
+        console.log(input.value);
+    })
+
+
+    // Form Submit
+    let form = document.querySelector("form");
+    form.addEventListener("submit",()=>{
+        alert("Submitted")
+    })
+    </script>
+  </body>
+</html>
