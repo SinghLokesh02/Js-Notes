@@ -37,7 +37,7 @@
 
 
 // Example - 4
-// debugger
+// // debugger
 // console.log(firstName);
 // let firstName = "Lokesh";
 // console.log(firstName);
@@ -82,7 +82,11 @@
 
 
  
-
+// Hoisting
+// console.log(x); Outputs: undefined
+//  function x(){
+//     console.log("hello");
+// }
 
 
  
