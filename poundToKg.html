@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+    background: linear-gradient(to left top, rgb(251, 173, 17), rgb(14, 224, 210), rgb(3, 245, 92));
+    min-height: 100vh;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: darkcyan;
+        }
+        .card{
+            display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="card">
+        <h2>
+            Weight Converter  
+        </h2>
+        <div>
+            <label for="pounds">Pounds:</label>
+
+            <input type="number" class="input"   placeholder="Enter number" min="0" id="pounds" required >
+
+        </div>
+        <div>
+            <p>Your weight in kg is: <span id="result"></span></p>
+            <p class="error"></p>
+    
+        </div>
+    </div>
+    <script>
+        let input = document.querySelector("#pounds");
+        let result = document.querySelector("#result");
+
+        input.addEventListener("input",function(){
+             let kgs = parseInt(input.value) * 0.45359237;
+             result.innerText = kgs.toFixed(2);
+        })
+    </script>
+</body>
+</html>

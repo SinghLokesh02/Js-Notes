@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Query Selector</title>
+    <style>
+      button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #97a2ae;
+      }
+      button:hover {
+        background-color: #f8f9fa;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" />
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <button>=</button>
+    <button>6</button>
+    <button>-</button>
+    <button>*</button>
+    <button>AC</button>
+
+    <script>
+      let btns = document.querySelectorAll("button");
+      let input = document.querySelector("input");
+      btns.forEach(function(kaka) {
+        kaka.addEventListener("click", function() {
+         console.log(kaka.textContent);
+         if(kaka.textContent == "AC"){
+              input.value = "";
+         }
+         else{
+                input.value = kaka.textContent;
+         }
+         
+        });
+      });
+    </script>
+  </body>
+</html>

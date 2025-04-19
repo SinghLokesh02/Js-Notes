@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Hello 1</div>
+    <div>Hello 2</div>
+    <div>Hello 3</div>
+    <div>Hello 4</div>
+    <div>Hello 5</div>
+    <div>Hello 6</div>
+
+    <script>
+        // QuerySelectorAll
+        // let data = document.querySelectorAll("div");
+        // console.log(data.length);
+
+        // TagName
+        let divs = document.getElementsByTagName("div");
+        divs = [...divs]
+        console.log(Array.isArray(divs));
+        divs.push("Hey")
+        
+        console.log(divs.length)
+        
+
+        
+    </script>
+</body>
+</html>

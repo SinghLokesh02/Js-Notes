@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Functions</title>
+  </head>
+  <body>
+    <h1>Js Functions</h1>
+
+    <script>
+      // IIFE - Immediately Invoked Function Expression
+
+    //   function greet(name = "Guest") {
+    //     return `Hello, ${name}!`;
+    //   }
+
+    //   let a = greet("Suresh");
+    //   console.log(a); // Hello, Mohan!
+
+
+    // (function goodMorning(){
+    //     console.log("Good Morning!");
+    // })()
+
+
+    // Passing Functions as Arguments
+
+    // function Geeta() {
+    //     console.log("Hello Geeta!");
+    // }
+
+    // function Mohan(next) {
+    //     console.log("Hello Mohan!");
+    //     next()
+    // }
+
+    // Mohan(Geeta);
+
+
+    // Returning Functions from Functions
+    function Geeta() {
+        console.log("Hello Geeta!");
+    }
+
+    function Mohan() {
+        console.log("Hello Mohan!");
+        return Geeta;
+    }
+
+    let anish = Mohan();
+    anish()
+    
+
+     
+     
+    </script>
+  </body>
+</html>

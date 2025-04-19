@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+    <style>
+        #dabba{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="dabba">click me</div>
+
+    <input type="text" id="name">
+
+    <script>
+        let div = document.getElementById('dabba');
+        let inputBox = document.getElementById('name');
+        // div.addEventListener("event", function)
+
+        div.addEventListener("click", ()=>{
+            let red = Math.round(Math.random()*256)
+             let green = Math.round(Math.random()*256)
+             let blue = Math.round(Math.random()*256)
+             console.log(red,green,blue);
+            div.style.backgroundColor = `rgb(${red},${green},${blue})`;
+        });
+
+
+        inputBox.addEventListener("keypress", ()=>{
+            alert("You Pressed me");
+        });
+        
+    </script>
+</body>
+</html>

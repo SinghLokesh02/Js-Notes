@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specificity</title>
+    <style>
+        p#p{
+            color: cyan;
+        }
+        p{
+            color: red;
+        }
+        #p{
+            color: blue;
+        }
+        .child>p#p{
+            color: coral;
+        }
+        .parent .child #p{
+            color: pink;
+        } 
+        .parent .child p#p{
+            color: purple;
+        } 
+        p{
+            color: brown !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            <p id="p" style="color: navajowhite;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ipsam fugit odit eos quaerat enim expedita eum dignissimos cum voluptatum.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="func1()">Button 1</button>
+    <button onclick="func2()">Button 2</button>
+    <button onclick="func3()">Button 3</button>
+
+    <script>
+      function func1() {
+        let x = parseInt(prompt("Enter a Number "));
+        if (x % 2 == 0) {
+          alert("Even Number");
+        } else {
+          alert("Odd Number");
+        }
+      }
+      let func2 = function () {
+        let num = parseInt(prompt("Enter a Number"));
+        // Check if Prime
+        let count = 0;
+        for (let i = 1; i <= num; i++) {
+          if (num % i == 0) {
+            count++;
+          }
+        }
+        if (count == 2) {
+          alert("Prime Number");
+        } else {
+          alert("Not Prime Number");
+        }
+      };
+
+
+      let func3 = () => {
+        let num = parseInt(prompt("Enter a Number"));
+        // Check if Prime
+        let count = 0;
+        for (let i = 1; i <= num; i++) {
+          if (num % i == 0) {
+            count++;
+          }
+        }
+        if (count > 2) {
+          alert("Composite Number");
+        } else {
+          alert("Not Composite Number");
+        }
+      };
+    </script>
+  </body>
+</html>

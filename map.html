@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map in Js</title>
+</head>
+<body>
+    <h1>Map in Js</h1>
+
+    <ul type="disc">
+        <li>Hemant</li>
+        <li>Mohit</li>
+        <li>Mantasha</li>
+        <li>Divya</li>
+        <li>Anchal</li>
+    </ul>
+
+    <script>
+        // Method -1 to create a Map
+        // let person = [["name", "Lokesh"],["age" , 22],["email" , "lokesh@gmail.com"]]
+        // const personMap = new Map(person)
+        // console.log(personMap);
+        
+
+        // Method - 2
+        const person = new Map();
+
+        person.set("Name","Lokesh Singh");
+        person.set("age",22);
+        person.set("email","Lokesh@gmail.com");
+        console.log(person);
+
+        // get method() - get the value of given key
+        console.log(person.get("Name"))
+
+        // has method – check the key exists or not
+        console.log(person.has("name"))
+
+        // Loop Over Map
+
+        person.forEach(function(a,b){
+            console.log(b,a)
+        })
+
+        // Convert Map to Array
+
+        const personArr = Array.from(person)
+        console.log(personArr);
+        
+
+        const Name = "Lokesh Singh";
+        console.log(Name);
+        const Obj = {...Name}
+        console.log(Obj);
+        
+        
+    </script>
+</body>
+</html>

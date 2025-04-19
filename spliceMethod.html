@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question</title>
+</head>
+<body>
+    <script>
+        // Give me a Array of Objects like flipkart 10 having field name, price, rating, discount, and sort it by price in descending order.And Question based on sort,some,every,find,findLast,filter
+
+        const products = [
+            { name: "Product A", price: 100, rating: 4.5, discount: 10 },
+            { name: "Product B", price: 200, rating: 4, discount: 15 },
+            { name: "Product C", price: 150, rating: 4.2, discount: 5 },
+            { name: "Product D", price: 300, rating: 4.9, discount: 20 },
+            { name: "Product E", price: 250, rating: 4.0, discount: 12 },
+        ];
+
+        // Question - 1) Sort by price in descending order
+
+
+        // Question - 2) Find the product with the highest rating
+        let max = products[0];
+        for(data of products){
+            if(data.rating > max.rating){
+                max = data;
+            }
+        }
+        console.log(max);
+
+        // Sort
+        products.sort((a,b) => b.rating - a.rating)
+        console.log(products[0]);
+        
+        
+
+
+        // Question - 3) Check if all products have a discount greater than 5%
+        
+
+        // Question - 4) Filter products with a rating greater than 4.0
+
+
+        // Question - 5) Check if any product has a price less than 150
+
+
+        // Question - 6) Find the first product with a discount greater than 15%
+        let ans = products.find((product) => product.discount > 15)
+        console.log(ans);
+    </script>
+</body>
+</html>

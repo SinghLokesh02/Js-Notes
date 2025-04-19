@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sort Method</title>
+  </head>
+  <body>
+    <h1>Sort Method Js</h1>
+
+    <script>
+      // let names = ["Ankit","Rohit Gill","Mayank","Anish","Rohit Kumawat"]
+      // names.sort().reverse()
+      // console.log(names);
+
+      // let numbers = [1,2,345,56,768,789,23,43,56,876];
+
+      // numbers.sort((a,b) => b-a)
+      // console.log(numbers);
+
+      // Sorting Array of Objects
+    //   const users = [
+    //     { name: "Alice", age: 25 },
+    //     { name: "Bob", age: 30 },
+    //     { name: "Charlie", age: 20 },
+    //     { name: "Mayank", age: 31 },
+    //     { name: "Anish", age: 31 },
+    //     { name: "Rohit Gill", age: 131 },
+    //     { name: "Ankit", age: 12 },
+    //   ];
+
+    //   users.sort(function(a,b){
+    //     return a.age - b.age;
+    //   })
+    //   console.log(users);
+
+
+    // Give me Object Like flipkart 10 having field name, price, rating, discount, and sort it by price in descending order.
+    const products = [
+      { name: "Product A", price: 100, rating: 4.5, discount: 10 },
+      { name: "Product B", price: 200, rating: 4, discount: 15 },
+      { name: "Product C", price: 150, rating: 4.2, discount: 5 },
+      { name: "Product D", price: 300, rating: 4.9, discount: 20 },
+      { name: "Product E", price: 250, rating: 4.0, discount: 12 },
+    ];
+
+    // products.sort((a,b) => a.rating - b.rating)
+    // console.log(products);
+
+
+
+    // Some method in Js
+
+    let names = ["Ankit","Rohit Gill","Mayank","Anish","Rohit Kumawat"]
+    let ans = names.some((name) =>  name.includes("a"))
+    
+    console.log(ans);
+
+
+    // Every Method
+
+    let ratingAns = products.every((item) => item.rating >= 4)
+    console.log(ratingAns);
+
+    let ratingAnsData = products.find((item) => item.rating >= 4)
+    console.log(ratingAnsData);
+    
+    
+    
+    
+      
+    </script>
+  </body>
+</html>

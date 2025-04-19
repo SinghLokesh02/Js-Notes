@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Code</title>
+    <style>
+        .box{
+            height: 200px;
+            width: 300px;
+            background-color: red;
+            border-radius: 20px;
+        }
+        button{
+            color: white;
+            background-color: black;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            margin: 20px;
+            &:hover{
+                background-color: gray;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello Welcome to the New World of Js</h1>
+    <div class="box"></div>
+    <button>Click me</button>
+
+    <script>
+        let btn = document.querySelector("button");
+        let div = document.querySelector(".box");
+
+        function getRandomColor(){
+            let red = Math.round(Math.random()*255)
+            let green = Math.round(Math.random()*255)
+            let blue = Math.round(Math.random()*255)
+            return `rgb(${red},${green},${blue})`;
+        }
+
+        btn.addEventListener("click",()=>{
+           const id =  setInterval(() => {
+                let bgc = getRandomColor()
+                div.style.backgroundColor = bgc;
+            }, 1000);
+            
+
+            setTimeout(() => {
+                clearInterval(id)
+            }, 10 * 1000);
+        })
+        
+
+    </script>
+</body>
+</html>

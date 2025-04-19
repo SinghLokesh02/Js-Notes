@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassList </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+             
+        }
+        .red{
+            color: red;
+        }
+        .center{
+            text-align: center;
+        }
+        .cursive{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .rohit{
+            color: black;
+        }
+
+        .rectangle{
+            height: 300px;
+            width: 500px;
+            background-color: red;
+            transform-origin: 1s;
+        }
+        .circle{
+            background-color: cyan;
+            rotate: 360deg;
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="red center cursive">Class List Property in Js</h1>
+
+    <div class="rectangle"></div>
+    <button>click Me</button>
+
+    <script>
+        let heading = document.querySelector(".red");
+
+        // Add Class
+        heading.classList.add("rohit")
+
+        // Get array of all class
+        let classes = heading.classList;
+        console.log(classes);
+
+        // length of class
+        console.log(heading.classList.length);
+
+        // Remove class 
+        heading.classList.remove("cursive")
+
+        // Toggle class
+        let div = document.querySelector("div")
+        document.querySelector("button").addEventListener("click",function(){
+            div.classList.toggle("circle")
+            console.log(div.classList.contains("circle"))
+        })
+        
+         
+    </script>
+</body>
+</html>

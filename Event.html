@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event</title>
+    <style>
+      body {
+        text-align: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        font-size: 24px;
+        color: blue;
+        cursor: pointer;
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body onmousemove="myFunction()" id="body">
+    <h1>Move Your Mouse</h1>
+
+    <script>
+      let body = document.getElementById("body");
+      function myFunction() {
+        let red = Math.round(Math.random() * 256);
+        let green = Math.round(Math.random() * 256);
+        let blue = Math.round(Math.random() * 256);
+        console.log(red, green, blue);
+        body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+      }
+    </script>
+  </body>
+</html>

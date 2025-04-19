@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Revision</title>
+
+    <style>
+      h1 {
+        color: red;
+        text-align: center;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event Listener</h1>
+    <h1 id="h1">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus,
+      cumque.
+    </h1>
+
+    <p class="para1" style="background-color: magenta">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, nulla
+      optio iure dolores nisi eveniet.
+    </p>
+    <p class="para1" style="background-color: red">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, nulla
+      optio iure dolores nisi eveniet.
+    </p>
+    <p class="para1" style="background-color: orange">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, nulla
+      optio iure dolores nisi eveniet.
+    </p>
+
+    <input type="text" placeholder="Type something here..." name="name" />
+
+    <script>
+      let p = document.querySelector(".para1");
+      //   Event -> Click
+      p.addEventListener("click",  function() {
+        alert("Hello I am Rohit");
+      });
+
+      let p3 = document.querySelectorAll(".para1")[2];
+
+      p3.addEventListener("mousemove",function(){
+        alert("Hello I am Rohit");
+      })
+     
+    </script>
+  </body>
+</html>

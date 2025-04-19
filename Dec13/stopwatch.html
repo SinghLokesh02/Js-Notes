@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        height: 200px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+      .time {
+        font-size: 50px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      p {
+        display: flex;
+      }
+      span {
+        padding: 0px 10px;
+      }
+      .btns {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+      #hour,#mins,#secs,#mills {
+        width: 40px;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+      }
+      #start,
+      #stop,
+      #reset {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      #start:hover,
+      #stop:hover,
+      #reset:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="time">
+        <p><span id="hour">00</span> <span>:</span></p>
+        <p><span id="mins">00</span> <span>:</span></p>
+        <p><span id="secs">56</span> <span>:</span></p>
+        <p><span id="mills">00</span></p>
+      </div>
+      <div class="btns">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+
+    <script>
+      let btns = document.querySelector(".btns");
+      let hour = document.querySelector("#hour");
+      let mins = document.querySelector("#mins");
+      let secs = document.querySelector("#secs");
+      let mills = document.querySelector("#mills");
+      let id = null;
+      btns.addEventListener("click", (e) => {
+        if (e.target.textContent === "Start") {
+          id = setInterval(() => {
+            mills.textContent = parseInt(mills.textContent) + 1;
+            if (mills.textContent == "100") {
+              mills.textContent = "0";
+              secs.textContent = parseInt(secs.textContent) + 1;
+            }
+            if (secs.textContent == "60") {
+              secs.textContent = "0";
+              mins.textContent = parseInt(mins.textContent) + 1;
+            }
+            if (mins.textContent == "60") {
+              mins.textContent = "0";
+              hour.textContent = parseInt(hour.textContent) + 1;
+            }
+            // Append 0 if the number is less than 10 by padStart
+            hour.textContent = hour.textContent.padStart(2, "0");
+            mins.textContent = mins.textContent.padStart(2, "0");
+            secs.textContent = secs.textContent.padStart(2, "0");
+            mills.textContent = mills.textContent.padStart(2, "0");
+          }, 10);
+        } else if (e.target.textContent === "Stop") {
+          clearInterval(id);
+        } else if (e.target.textContent === "Reset") {
+          clearInterval(id);
+          hour.textContent = "00";
+          mins.textContent = "00";
+          secs.textContent = "00";
+          mills.textContent = "00";
+        }
+      });
+    </script>
+  </body>
+</html>

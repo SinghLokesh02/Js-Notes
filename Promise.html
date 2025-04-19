@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise in JS</title>
+  </head>
+  <body>
+    <h1>Promise in HTML</h1>
+
+    <script>
+      // Method -1 to Create Promise
+      //   new Promise((res, rej) => {
+      //     let num = Math.round(Math.random() * 100);
+      //     console.log(num);
+
+      //     if (num % 2 == 0) {
+      //       res({ res: "Even", id: 6789 });
+      //     } else {
+      //       rej("Odd");
+      //     }
+      //   })
+      //     .then(function (val) {
+      //       console.log("I am resolved");
+      //       console.log(val);
+      //     })
+      //     .catch(function (val) {
+      //       console.log("I am Rejected");
+      //       console.log(val);
+      //     });
+
+      // Method -2 Create Promise
+      // let myPromise = new Promise((res, rej) => {
+      //     let num = Math.round(Math.random() * 100);
+      //     console.log(num);
+
+      //     if (num % 2 == 0) {
+      //       res({ res: "Even", id: 6789 });
+      //     } else {
+      //       rej("Odd");
+      //     }
+      //   })
+      //     myPromise.then(function (val) {
+      //       console.log("I am resolved");
+      //       console.log(val);
+      //     })
+      //     .catch(function (val) {
+      //       console.log("I am Rejected");
+      //       console.log(val);
+      //     });
+
+      // Method - 3 Create promise
+
+      // function functionReturningPromise(){
+      //     return new Promise((res, rej) => {
+      //     let num = Math.round(Math.random() * 100);
+      //     console.log(num);
+
+      //     if (num % 2 == 0) {
+      //       res({ res: "Even", id: 6789 });
+      //     } else {
+      //       rej("Odd");
+      //     }
+      //   })
+      // }
+      //    functionReturningPromise().then(function (val) {
+      //       console.log("I am resolved");
+      //       console.log(val);
+      //     })
+      //     .catch(function (val) {
+      //       console.log("I am Rejected");
+      //       console.log(val);
+      //     });
+
+      // Method - 4 SetTimeout in Promise
+
+      function functionReturningPromise() {
+        return new Promise((res, rej) => {
+          let num = Math.round(Math.random() * 100);
+          console.log(num);
+
+          setTimeout(() => {
+            if (num % 2 == 0) {
+              res({ res: "Even", id: 6789 });
+            } else {
+              rej("Odd");
+            }
+          }, 2000);
+        });
+      }
+      functionReturningPromise()
+        .then(function (val) {
+          console.log("I am resolved");
+          console.log(val);
+        })
+        .catch(function (val) {
+          console.log("I am Rejected");
+          console.log(val);
+        });
+    </script>
+  </body>
+</html>

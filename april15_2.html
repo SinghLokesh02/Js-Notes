@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this Keyword</title>
+  </head>
+  <body>
+    <script>
+         function getInfo(aim,hobby) {
+          console.log(`Hey, My name is ${this.name} and my age is ${this.age}`);
+          console.log(aim,hobby)
+        }
+
+      let person1 = {
+        name: "Lokesh",
+        age: 25,
+      };
+      let person2 = {
+        name: "Anish",
+        age: 24,
+      };
+      let person3 = {
+        name: "Rohit Gill",
+        age: 21,
+      };
+      let person4 = {
+        name: "Rohit Kumawat",
+        age: 21,
+      };
+    
+    //   Call Method
+    // getInfo.call(person2,"Padhai Nahi krna hai mera kaam","Ghar pr aaram")
+
+    // // Apply
+    // getInfo.apply(person2,["Padhai Nahi krna hai mera kaam","Ghar pr aaram"])
+
+    //   Bind
+    getInfo.bind(person2,"Padhai Nahi krna hai mera kaam","Ghar pr aaram")()
+     
+    </script>
+  </body>
+</html>

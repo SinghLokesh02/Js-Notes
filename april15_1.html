@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this Keyword</title>
+  </head>
+  <body>
+    <script>
+         function getInfo() {
+          console.log(`Hey, My name is ${this.name} and my age is ${this.age}`);
+        }
+
+      let person1 = {
+        name: "Lokesh",
+        age: 25,
+        printData:getInfo
+      };
+      let person2 = {
+        name: "Anish",
+        age: 24,
+        printData: getInfo
+      };
+      let person3 = {
+        name: "Rohit Gill",
+        age: 21,
+        printData: getInfo
+      };
+      let person4 = {
+        name: "Rohit Kumawat",
+        age: 21,
+        printData: getInfo
+      };
+    person4.printData()
+   
+    </script>
+  </body>
+</html>

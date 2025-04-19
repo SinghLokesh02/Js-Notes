@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Filter</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      .btns {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      button {
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 18px;
+        outline: none;
+        border-radius: 5px;
+        &:hover {
+          background-color: #a05445;
+        }
+      }
+      .box1 {
+        border: 3px double lime;
+        margin: 20px;
+      }
+      .input-1 span,
+      .input-2 span {
+        display: inline-block;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1 class="heading">Number Filter</h1>
+
+      <h2>Array of Numbers</h2>
+      <div class="box1">
+        <p class="input-1"></p>
+      </div>
+
+      <h2>Filter Array</h2>
+      <div class="box1">
+        <p class="input-2"></p>
+      </div>
+
+      <div class="btns">
+        <button>Get Even Number</button>
+        <button>Get Odd Number</button>
+        <button id="prime">Get Prime Number</button>
+        <button>Get Composite Number</button>
+      </div>
+    </div>
+
+    <script>
+      function checkPrime(num) {
+        let count = 0;
+        for (let i = 1; i <= num; i++) {
+          if (num % i == 0) {
+            count++;
+          }
+        }
+        if (count == 2) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      let para1 = document.querySelector(".input-1");
+      let para2 = document.querySelector(".input-2");
+
+      for (let i = 1; i <= 100; i++) {
+        para1.innerHTML += `<span>${i}</span>`;
+      }
+      for (let i = 1; i <= 100; i++) {
+        para2.innerHTML += `<span>${i}</span>`;
+      }
+
+      // Working of Buttons
+      let primeBtn = document.querySelector("#prime");
+      primeBtn.addEventListener("click", () => {
+        para2.innerHTML = "";
+        for (let num = 1; num <= 100; num++) {
+            let ans = checkPrime(num);
+            if(ans == true){
+                para2.innerHTML += `<span>${num}</span>`;
+            }
+        }
+      });
+    </script>
+  </body>
+</html>
