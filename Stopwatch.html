@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+</head>
+<body>
+    <p>
+        <span id="hours">00</span>:
+        <span id="minutes">00</span>:
+        <span id="seconds">00</span>:
+        <span id="milliseconds">00</span>
+    </p>
+
+    <div class="btns">
+        <button id="startbtn">Start</button>
+        <button id="stopbtn">Stop</button>
+        <button id="resetbtn">Rest</button>
+    </div>
+
+
+    <script>
+        let startBtn = document.querySelector("#startbtn");
+        let milliseconds = document.querySelector("#milliseconds");
+        let seconds = document.querySelector("#seconds");
+
+        startBtn.addEventListener("click",()=>{
+            let x = 1;
+            setInterval(()=>{
+                x++;
+                milliseconds.textContent = x 
+                if(x === 100){
+                    seconds.textContent = parseInt(seconds.textContent)+1
+                    x = 1
+                }
+                
+            },10)
+        })
+
+    </script>
+</body>
+</html>

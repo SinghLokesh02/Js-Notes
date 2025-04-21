@@ -8,7 +8,18 @@
 <body>
     
     <script>
-        let names = ["Rohit","Mayank","Rohit","Anish","Ankit"]
+        let names = ["Rohit1","Mayank","Rohit2","Anish","Ankit3"]
+        new Promise((res,rej)=>{
+            let newNamesArray = names.filter(name => name.endsWith("it"))
+            if(newNamesArray.length > 0){
+                res(newNamesArray)
+            }
+            else{
+                rej(newNamesArray)
+            }
+        }).then((val) => console.log(val))
+        .catch((err)=> console.log(err)
+        )
     </script>
 </body>
 </html>

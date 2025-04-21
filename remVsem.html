@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rem Vs Em in HTML</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: cursive;
+      }
+      :root {
+        font-size: 10px;
+      }
+      .box:nt {
+        background-color: red;
+        font-size: 2em;
+      }
+      p {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+
+    <div class="box">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus
+        tempora modi unde enim quaerat? Doloribus nobis consequatur quod numquam
+        recusandae.
+      </p>
+
+      <input type="text" />
+
+      <script>
+        let input = document.querySelector("input");
+
+        // Debounce
+        function debounce(func, delay) {
+          let timerId;
+          return (...args) => {
+            clearTimeout(timerId);
+            timerId = setTimeout(() => {
+              func(...args);
+            }, delay);
+          };
+        }
+
+        function printText(text){
+            console.log(text)
+        }
+
+        const Searchdebounce = debounce(printText,2000)
+
+        input.addEventListener("input", () => {
+            Searchdebounce(input.value)
+        });
+      </script>
+    </div>
+  </body>
+</html>
