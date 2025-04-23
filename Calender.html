@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+</head>
+<body>
+    <div class="date">
+        <h1 id="month"></h1>
+        <p id="day"></p>
+        <h1 id="date"></h1>
+        <p id="year"></p>
+    </div>
+
+
+
+    <script>
+        let month = document.querySelector("#month");
+        let day = document.querySelector("#day");
+        let date = document.querySelector("#date");
+        let year = document.querySelector("#year");
+
+        // JavaScript Object to Get Date
+        let dateJs = new Date();
+        
+        // Month
+        let getmonthIndex = dateJs.getMonth();
+        const monthArray = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        month.innerText = monthArray[getmonthIndex]
+
+        // Day
+        let getDayIndex = dateJs.getDay()
+        const dayArray = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        day.innerText = dayArray[getDayIndex]
+
+        // date
+        date.innerText = dateJs.getDate()
+
+        // Year
+        year.innerText = dateJs.getFullYear()
+    </script>
+</body>
+</html>
