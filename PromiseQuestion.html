@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise Questions</title>
+  </head>
+  <body>
+    <script>
+      // 1. Create a promise that resolves with "Hello, World!" and log the result using .then().
+
+      let resolvePromise = new Promise((res, rej) => {
+        res("Hello WOrld !!!");
+      });
+      resolvePromise.then((val) => console.log(val));
+
+      // 2. Create a promise that rejects with an error message "Something went wrong!" and handle it with .catch().
+
+      let rejectPromise = new Promise((res, rej) => {
+        rej("Something Went Wrong !!!");
+      });
+      rejectPromise.catch((val) => console.log(val));
+
+      // 3. Create a function isEven(num) that returns a Promise:Resolve if number is even,Reject if odd.
+
+      function isEven(num) {
+        return new Promise((res, rej) => {
+          num % 2 === 0 ? res("Even") : rej("Odd");
+        });
+      }
+
+      isEven(121)
+        .then((val) => console.log(val))
+        .catch((val) => console.log(val));
+
+      // 4. Create a function multiplyByTwo(num) that returns a promise which resolves with num * 2.
+
+      function multiplyByTwo(num) {
+        return new Promise((res, rej) => {
+          res(num * 2);
+        });
+      }
+      multiplyByTwo(22).then((val) => console.log(val));
+
+
+      
+    </script>
+  </body>
+</html>
