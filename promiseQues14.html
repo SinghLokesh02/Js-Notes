@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise 14</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        // Write a promise-based countdown timer from 5 to 1, logging each number every second, and finally logging "Go!".
+
+        let h1 = document.querySelector("h1");
+        let num = 5;
+        const timerPromise = new Promise((res,rej)=>{
+            const id = setInterval(() => {
+                h1.innerText = num;
+                num--;
+                if(num < 0){
+                    res("Go !")
+                    clearInterval(id);
+                }
+            }, 1000);
+        })
+
+
+        timerPromise.then((val) =>{
+            h1.innerText = val
+        })
+    </script>
+</body>
+</html>

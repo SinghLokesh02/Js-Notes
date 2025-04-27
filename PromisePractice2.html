@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+      .loader {
+        width: 48px;
+        height: 48px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+      }
+      .loader::after,
+      .loader::before {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #ff3d00;
+        width: 6px;
+        height: 6px;
+        transform: translate(150%, 150%);
+        border-radius: 50%;
+      }
+      .loader::before {
+        left: auto;
+        top: auto;
+        right: 0;
+        bottom: 0;
+        transform: translate(-150%, -150%);
+      }
+
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1></h1>
+    
+    <script>
+      // 🔹 Mini Challenge - Create a "loading simulator":
+      // Promise resolves after 2s with "Loading complete!"
+      // Show "Loading..." before it, and replace it with result after resolution
+
+      let h1 = document.querySelector("h1");
+
+      let loadingSimulator = new Promise((res, rej) => {
+        let span = document.createElement("span");
+        span.classList.add("loader");
+        document.body.append(span)
+        h1.innerText = "Loading ...";
+        setTimeout(() => {
+          res("Loading Complete!");
+        }, 2000);
+      });
+
+      loadingSimulator.then((val) => {
+        document.querySelector("span").style.display = "none"
+        h1.innerText = val;
+      });
+    </script>
+  </body>
+</html>

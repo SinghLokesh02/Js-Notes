@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js API</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+            
+        }
+        .box{
+            padding: 20px;
+            /* display: inline-block; */
+            background-color: lightblue;
+            margin: 20px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        }
+    </style>
+  </head>
+  <body>
+    <script>
+      let body = document.body;
+      // let URL = "https://jsonplaceholder.typicode.com/posts";
+      let URL = "https://jsonplaceholder.typicode.com/users";
+      // fetch always return us a Promise
+      fetch(URL)
+        .then((val) => {
+          return val.json();
+        })
+        .then((json) => {
+          console.log(json);
+
+          json.forEach((user) => {
+            let div = document.createElement("div");
+            div.classList.add("box");
+            let p = document.createElement("p");
+            p.innerText = user.name;
+            
+            let p2 = document.createElement("p");
+            p2.innerText = user.address.zipcode;
+            div.append(p);
+            div.append(p2);
+
+            // Appending div to body
+            body.appendChild(div)
+          });
+
+          // For Fetching 1 Data
+
+          // let firstUser = json[0];
+          // console.log(firstUser);
+
+          // let p = document.createElement('p');
+          // p.innerText = firstUser.name;
+          // body.append(p);
+
+          // let p2 = document.createElement('p');
+          // p2.innerText = (firstUser.address.zipcode)
+          // body.append(p2)
+        })
+        .catch((err) => console.log(err));
+    </script>
+  </body>
+</html>
