@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post API</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+        .box{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            padding: 20px;
+            margin: 20px;
+            background-color: lightblue;
+            border-radius: 20px;
+            &:hover{
+                box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <script>
+      let mainBody = document.body;
+      let url = "https://jsonplaceholder.typicode.com/posts";
+      fetch(url)
+        .then((response) => response.json())
+        .then((json) => {
+          json.forEach((item) => {
+            const { body, title } = item;
+            let div = document.createElement("div");
+            div.classList.add("box");
+
+            div.innerHTML = `
+                    <p id="p1">Body => ${body}</p>
+                    <p id="p2">Title => ${title}</p>
+                    `;
+            mainBody.append(div);
+          });
+        });
+    </script>
+  </body>
+</html>

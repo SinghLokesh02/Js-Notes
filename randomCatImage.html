@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Cat Image</title>
+    <style>
+      img {
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="" alt="">
+    <button>Click Me</button>
+
+    <script>
+      let button = document.querySelector("button");
+      let image = document.querySelector("img");
+      button.addEventListener("click", () => {
+        let URL = "https://api.thecatapi.com/v1/images/search";
+        fetch(URL)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            image.src = data[0].url;
+          });
+      });
+    </script>
+  </body>
+</html>

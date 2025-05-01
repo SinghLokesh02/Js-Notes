@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Api Question 8</title>
+  </head>
+  <body>
+    <h1></h1>
+    <script>
+      let API_URL = "https://jsonplaceholder.typicode.com/posts";
+      let heading = document.querySelector("h1");
+
+      fetch(API_URL)
+        .then((val) => {
+          heading.textContent = "Loading...";
+          return val.json();
+        })
+        .then((json) => {
+          setTimeout(() => {
+            heading.textContent = "Data Loaded ✅";
+            console.log(json);
+          }, 2000);
+        });
+    </script>
+  </body>
+</html>
